@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Q.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -24,11 +23,6 @@ namespace Q.EntityFrameworkCore
         public DbSet<Order> Orders { get; set; }
         public Messaging<OrderPosted> OrderEvents { get; set; }
 
-        public void OnMessagingCreating()
-        {
-
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("Server=localhost;Database=MyDatabase;User Id=myuser;Password=mypassword;");
@@ -37,7 +31,29 @@ namespace Q.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Order>()
+                .HasData();
+
+            modelBuilder.Message<OrderPosted>()
+                .HasExchange(exchange: "");
+        }
+    }
+
+    public static class ModelBuilderExtensions
+    {
+        public static MessageTypeBuilder<T> Message<T>(this ModelBuilder modelBuilder)
+        {
+            // Here you would configure the messaging settings for the entity
+            // For example, you might set up an exchange and queue for RabbitMQ
+            throw new NotImplementedException("This method should configure the messaging settings for the entity.");
+        }
+    }
+
+    public class MessageTypeBuilder<T>
+    {
+        internal void HasExchange(string exchange)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -53,7 +69,6 @@ namespace Q.EntityFrameworkCore
 
     public interface IRMQDbContext
     {
-        public void OnMessagingCreating();
 
         //IConnection Connection { get; set; }
     }
