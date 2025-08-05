@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "q-entity-framework", "q-entity-framework.csproj", "{2B9E8B87-47A5-4BC2-A87F-4617BE0A3759}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C601AA7-B8C7-425D-A4A5-00A05FD29F94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F7C7763-A640-4BE0-85CD-5AF631D2EC56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9063E097-0651-4C20-81E7-E57EF2C51F42}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q.EntityFrameworkCore", "..\src\Q.EntityFrameworkCore\Q.EntityFrameworkCore.csproj", "{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +20,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B9E8B87-47A5-4BC2-A87F-4617BE0A3759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B9E8B87-47A5-4BC2-A87F-4617BE0A3759}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B9E8B87-47A5-4BC2-A87F-4617BE0A3759}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B9E8B87-47A5-4BC2-A87F-4617BE0A3759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29E00BEB-DEB9-4BA9-AFCD-962BF1825FE0} = {7C601AA7-B8C7-425D-A4A5-00A05FD29F94}
 	EndGlobalSection
 EndGlobal
