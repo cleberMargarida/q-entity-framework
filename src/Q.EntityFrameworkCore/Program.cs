@@ -35,7 +35,8 @@ namespace Q.EntityFrameworkCore
                 .HasData();
 
             modelBuilder.Message<OrderPosted>()
-                .HasExchange(exchange: "");
+                .HasExchange(exchange: "")
+                .WithBinding(queue: "");
         }
     }
 
@@ -51,7 +52,20 @@ namespace Q.EntityFrameworkCore
 
     public class MessageTypeBuilder<T>
     {
-        internal void HasExchange(string exchange)
+        public ExchangeTypeBuilder<T> HasExchange(string exchange)
+        {
+            throw new NotImplementedException();
+        }
+    }
+ 
+    public class ExchangeTypeBuilder<T>
+    {
+        public ExchangeTypeBuilder<T> HasExchange(string exchange)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal ExchangeTypeBuilder<T> WithBinding(string queue)
         {
             throw new NotImplementedException();
         }
